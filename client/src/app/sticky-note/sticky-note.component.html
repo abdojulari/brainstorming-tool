@@ -1,0 +1,35 @@
+<section class="flex h-full w-full my-5">
+    <div class="w-24 p-2 border-r">
+        <button  class="text-sm p-2 border" (click)="addNote()" >
+          Add Note
+        </button> 
+      
+        <!-- color pane  -->
+        <div class="my-5">
+            <div class="text-xs font-bold my-2">Colour </div>
+            <span class="flex justify-around p-1 border-b">
+                <label class="text-xs ">Fill</label>
+                <input class="w-5 h-5" type="color" [(ngModel)]="color" />
+            </span>
+        </div>
+    </div>
+    
+    <div class="w-5/6 p-2">
+        <div class="flex flex-wrap p-2 m-5"  >
+            <app-note *ngFor="let note of notes; let i = index"
+            (dismiss)="deleteNote($event)" 
+            (focusout)="saveNote($event)" 
+            id="{{note.id}}"
+            [noteId]="note.id"
+            [color]="note.color"
+            >
+            {{note.content}}
+            </app-note>
+        </div>
+    </div>
+ 
+
+    <div class="absolute bottom-0 right-0 m-5">
+        <button> Next</button>
+    </div>
+</section>

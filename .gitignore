@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+.vscode/
+server.cert
+server.key
+server.csr
+*.cert
+*.crt
+*.csr
+*.key
+*.pem
+
+# Build output
+dist/
+tmp/
+out-tsc/
+bazel-out/
+coverage/
+.angular/
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+*.log
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/

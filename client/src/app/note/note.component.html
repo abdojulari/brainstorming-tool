@@ -1,0 +1,48 @@
+<div #ele 
+class="w-44 m-5 p-2  element" 
+[ngStyle]="{'background-color': color}"
+
+>
+    <div  class="flex p-1 justify-between">
+        <span class="cursor-pointer text-black text-base font-bold" (click)="onDismiss($event)">
+            X
+        </span>
+        <span class="text-blue-900 text-sm font-bold"> votes: {{ vote }}</span>
+    </div>
+    <div 
+      class="content h-28 cursor-default outline-0 overflow-y-scroll" 
+      contenteditable="true" 
+      (blur)="onFocusOut($event)"
+      >
+          <ng-content></ng-content>
+      </div>
+    <div class="flex justify-around border-t p-1">
+        <button class="" (click)="record($event)">
+            <img class="w-6" src="./assets/icons/mic.png" alt="mic">
+        </button>
+        <button (click)="onBuildOn()">
+            Build on
+        </button>
+        <button class="" (click)="voteIdea(noteId)">
+            <span>Like</span>
+        </button>
+
+    </div>
+</div>
+
+<div 
+*ngFor="let element of elements" 
+#buildOn 
+draggable=true
+class="w-44 m-5 p-2" 
+[ngStyle]="{'background-color': element.color}">
+    <div class="flex p-1 justify-between">
+      <span class="cursor-pointer text-black text-base font-bold" (click)="deleteNote($event)">
+        X
+      </span>
+    </div>
+    <div class="h-28 cursor-default outline-0 overflow-y-scroll" 
+     contenteditable="true">
+      {{ element.content }}
+    </div>
+  </div>

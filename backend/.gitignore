@@ -1,0 +1,15 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.vscode/
+server.cert
+server.key
+server.csr
+*.cert
+*.crt
+*.csr
+*.key
+*.pem
+*.log
+.DS_Store
