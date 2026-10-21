@@ -108,13 +108,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## TODO
 
 - [ ] Add a registration screen for `POST /join` (the API exists; the UI does not)
-- [ ] Persist boards and shapes in PostgreSQL (shapes currently live in memory and reset when the server restarts)
+- [ ] Persist boards and shapes in PostgreSQL (shapes currently live in memory and reset when the server restarts) and get purged after session ends
 - [ ] Support multiple boards so separate sessions do not share one canvas
 - [ ] Sync sticky notes over Socket.IO (they are stored in `localStorage` only)
 - [ ] Share one authenticated socket between the whiteboard and chat
 - [ ] Restore a saved stage from `localStorage` when the confirm dialog is accepted
-- [ ] Require authentication on the Socket.IO admin UI before any shared deployment
 - [ ] Validate and rate-limit `/join` and `/login`
 - [ ] Add API and UI tests
-- [ ] Set the production API URL in `client/src/environments/environment.prod.ts`
-- [ ] Create admin dashboard to manage users etc  
+
